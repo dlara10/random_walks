@@ -1,0 +1,13 @@
+all= a.out rand.png random_walks.txt
+rand.png: random_walks.py
+	  python random_walks.py
+random_walks.txt: a.out
+		  ./a.out
+a.out:random_walks.c
+	gcc random_walks.c -lm
+clean:
+	rm rand.png random_walks.txt a.out
+	
+		  
+
+
